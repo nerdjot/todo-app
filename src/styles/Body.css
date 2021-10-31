@@ -1,0 +1,14 @@
+.body-div{
+  position:absolute;
+  top:60px;
+  left:0;
+  width:100%;
+  display: flex;
+  justify-content:start;
+}
+
+.side-bar{
+  background-color:#EEEEEE;
+  height:100vh;
+  width:70px;
+}

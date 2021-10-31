@@ -1,0 +1,13 @@
+.navbar{
+  background-color: #A5668B;
+  height:60px;
+  top:0;
+  left:0;
+  position:absolute;
+  width:100%;
+  color: white;
+  font-weight:600;
+  font-size:20px;
+  line-height:70px;
+  align: center;
+}
