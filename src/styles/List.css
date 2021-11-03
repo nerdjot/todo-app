@@ -1,18 +1,28 @@
-.list-div{
-  padding-top:30px;
-  padding-left:20px;
+.list-div {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right:20px;
+  background-color: aqua;
+  width:100%;
 }
 
-.list-list-name{
-  font-size:25px;
+.list-list-name {
+  font-size: 25px;
 }
 
-.list-date{
-  font-size:15px;
+.list-date {
+  font-size: 15px;
   color: #6e6e6e;
-  padding-top:5px;
+  padding-top: 5px;
 }
 
-.list-view{
+.list-view {
   padding-top: 20px;
+  background-color: burlywood;
+}
+
+.list-empty {
+  width: 100%;
+  height: 100px;
+  background-color: aquamarine;
 }
