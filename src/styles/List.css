@@ -1,7 +1,6 @@
 .list-div {
   padding-top: 30px;
   padding-left: 20px;
-  padding-right: 20px;
   width: 100%;
 }
 
@@ -20,6 +19,23 @@
   height: 100%;
 }
 
+.list-actual {
+  width: 100%;
+  max-height: calc(100vh - 178px);
+  overflow-y: auto;
+}
+.list-actual div {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.internal{
+  display:flex;
+  justify-content: space-between;
+}
+
+
 .list-empty {
   width: 100%;
   height: 100%;
@@ -30,6 +46,6 @@
 
 .list-empty div {
   width: 100%;
-  height: 50px;
+  height: 40px;
   border-bottom: 2px solid #eaeaea;
 }
