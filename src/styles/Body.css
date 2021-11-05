@@ -5,12 +5,11 @@
   width: 100%;
   display: flex;
   justify-content: start;
-  background-color: red;
   height: calc(100vh - 60px);
+  overflow-y: hidden;
 }
 
 .side-bar {
   background-color: #eeeeee;
   width: 70px;
-  height: 100%;
 }
