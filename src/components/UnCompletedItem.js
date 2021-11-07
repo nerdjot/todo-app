@@ -7,7 +7,7 @@ import {
   FaRegStar,
 } from 'react-icons/fa';
 
-const UnCompletedItem = () => {
+const UnCompletedItem = ({value, isFavourite}) => {
   const [isHovered, setIsHover] = useState(false);
 
   return (
@@ -23,9 +23,9 @@ const UnCompletedItem = () => {
       >
         {isHovered ? <FaRegCheckCircle /> : <FaRegCircle />}
       </div>
-      <div className="internal-internal">Bring groceries from dealership</div>
+      <div className="internal-internal">{value}</div>
       <div className="star">
-        <FaRegStar />
+        {isFavourite ? <FaStar /> : <FaRegStar />}
       </div>
     </div>
   );

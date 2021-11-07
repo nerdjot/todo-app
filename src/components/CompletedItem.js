@@ -7,7 +7,7 @@ import {
   FaRegStar,
 } from 'react-icons/fa';
 
-const CompletedItem = () => {
+const CompletedItem = ({value, isFavourite}) => {
   const [isHovered, setIsHover] = useState(false);
 
   return (
@@ -23,9 +23,9 @@ const CompletedItem = () => {
       >
         <FaCheckCircle />
       </div>
-      <div className="internal-internal">Eat a banana</div>
+      <div className="internal-internal">{value}</div>
       <div className="star">
-        <FaRegStar />
+      {isFavourite ? <FaStar /> : <FaRegStar />}
       </div>
     </div>
   );

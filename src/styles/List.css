@@ -32,6 +32,7 @@
   display: flex;
   justify-content: space-between;
   line-height: 30px;
+  cursor: pointer;
 }
 .un-completed-item:hover {
   background-color: #f3f3f3;
@@ -77,6 +78,7 @@ summary {
   line-height: 50px;
   margin-left:18px;
   height: 50px;
+  cursor: pointer;
 }
 
 summary > * {

@@ -10,24 +10,31 @@ import {
 import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
-const ListActual = () => {
-  const [isHovered, setIsHover] = useState(false);
-  const toggleHover = () => {
-    setIsHover(!isHovered);
-  };
-
+const ListActual = ({ data, setData }) => {
+  const UnCompletedList = data.map((Item) =>
+  {
+    if(!Item['isCompleted'])
+    {
+      return <UnCompletedItem isFavourite={Item['isFavourite']} value={Item['value']} />
+    }
+  }
+);
+const CompletedList = data.map((Item) =>
+  {
+    if(Item['isCompleted'])
+    {
+      return <CompletedItem isFavourite={Item['isFavourite']} value={Item['value']} />
+    }
+  }
+);
   return (
     <div className="list-actual">
-      <UnCompletedItem />
-      <UnCompletedItem />
-      <UnCompletedItem />
-      <UnCompletedItem />
+      {UnCompletedList}
       <details>
         <summary>
           <div className="summary">Completed</div>
         </summary>
-        <CompletedItem />
-        <CompletedItem />
+        {CompletedList}
       </details>
     </div>
   );

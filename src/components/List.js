@@ -3,14 +3,40 @@ import '../styles/List.css';
 import AddComponent from './AddComponent';
 import ActualList from './ActualList';
 
-const Body = () => {
+const List = () => {
+  const [data, setData] = useState([
+    {
+      id: 0,
+      value: 'Bring eggs from Mall',
+      isCompleted: false,
+      isFavourite: true,
+    },
+    {
+      id: 1,
+      value: 'Bring tomatos from Mall',
+      isCompleted: false,
+      isFavourite: false,
+    },
+    {
+      id: 2,
+      value: 'Bring chicken from Mall',
+      isCompleted: true,
+      isFavourite: true,
+    },
+    {
+      id: 3,
+      value: 'Bring fish from Mall',
+      isCompleted: true,
+      isFavourite: false,
+    },
+  ]);
   return (
     <div className="list-div">
       <div className="list-list-name">My Day</div>
       <div className="list-date">Saturday, October 23</div>
       <div className="list-view">
         <AddComponent></AddComponent>
-        <ActualList />
+        <ActualList data={data} setData={setData} />
 
         <div className="list-empty">
           <div></div>
@@ -51,4 +77,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default List;
