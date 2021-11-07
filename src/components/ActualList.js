@@ -11,22 +11,44 @@ import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
 const ListActual = ({ data, setData }) => {
-  const UnCompletedList = data.map((Item) =>
-  {
-    if(!Item['isCompleted'])
-    {
-      return <UnCompletedItem isFavourite={Item['isFavourite']} value={Item['value']} />
+  const toggleFavourite = (pid) => {
+    var newData = [...data];
+    for (let i = 0; i < newData.length; i++) {
+      if (newData[i]['id'] === pid) {
+        newData[i]['isFavourite'] = !newData[i]['isFavourite'];
+      }
     }
-  }
-);
-const CompletedList = data.map((Item) =>
-  {
-    if(Item['isCompleted'])
-    {
-      return <CompletedItem isFavourite={Item['isFavourite']} value={Item['value']} />
+    setData(newData);
+  };
+
+  const UnCompletedList = data.map((Item) => {
+    if (!Item['isCompleted']) {
+      return (
+        <UnCompletedItem
+          id={Item['id']}
+          isFavourite={Item['isFavourite']}
+          value={Item['value']}
+          data={data}
+          setData={setData}
+          toggleFavourite={toggleFavourite}
+        />
+      );
     }
-  }
-);
+  });
+  const CompletedList = data.map((Item) => {
+    if (Item['isCompleted']) {
+      return (
+        <CompletedItem
+          id={Item['id']}
+          isFavourite={Item['isFavourite']}
+          value={Item['value']}
+          data={data}
+          setData={setData}
+          toggleFavourite={toggleFavourite}
+        />
+      );
+    }
+  });
   return (
     <div className="list-actual">
       {UnCompletedList}

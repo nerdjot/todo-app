@@ -7,7 +7,14 @@ import {
   FaRegStar,
 } from 'react-icons/fa';
 
-const UnCompletedItem = ({value, isFavourite}) => {
+const UnCompletedItem = ({
+  id,
+  value,
+  isFavourite,
+  data,
+  setData,
+  toggleFavourite,
+}) => {
   const [isHovered, setIsHover] = useState(false);
 
   return (
@@ -24,7 +31,7 @@ const UnCompletedItem = ({value, isFavourite}) => {
         {isHovered ? <FaRegCheckCircle /> : <FaRegCircle />}
       </div>
       <div className="internal-internal">{value}</div>
-      <div className="star">
+      <div className="star" onClick={()=>{toggleFavourite(id)}}>
         {isFavourite ? <FaStar /> : <FaRegStar />}
       </div>
     </div>
