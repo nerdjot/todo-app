@@ -19,6 +19,15 @@
   height: 100%;
 }
 
+.add-comp {
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+}
+
 .list-actual {
   width: 100%;
   max-height: calc(100vh - 178px);
@@ -70,13 +79,13 @@
   list-style: none;
   cursor: pointer;
 }
-details{
+details {
   border-bottom: 2px solid #eaeaea;
 }
 
 summary {
   line-height: 50px;
-  margin-left:18px;
+  margin-left: 18px;
   height: 50px;
   cursor: pointer;
 }
@@ -88,8 +97,8 @@ summary > * {
   display: inline;
   font-size: 20px;
 }
-summary > div{
-  margin-left:12px;
+summary > div {
+  margin-left: 12px;
 }
 .summary::before {
 }
