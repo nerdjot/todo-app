@@ -14,6 +14,7 @@ const CompletedItem = ({
   data,
   setData,
   toggleFavourite,
+  toggleCompleted,
 }) => {
   const [isHovered, setIsHover] = useState(false);
 
@@ -26,6 +27,9 @@ const CompletedItem = ({
         }}
         onMouseLeave={() => {
           setIsHover(false);
+        }}
+        onClick={() => {
+          toggleCompleted(id);
         }}
       >
         <FaCheckCircle />

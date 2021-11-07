@@ -11,6 +11,17 @@ import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
 const ListActual = ({ data, setData }) => {
+
+  const toggleCompleted = (pid) => {
+    var newData = [...data];
+    for (let i = 0; i < newData.length; i++) {
+      if (newData[i]['id'] === pid) {
+        newData[i]['isCompleted'] = !newData[i]['isCompleted'];
+      }
+    }
+    setData(newData);
+  };
+
   const toggleFavourite = (pid) => {
     var newData = [...data];
     for (let i = 0; i < newData.length; i++) {
@@ -31,6 +42,7 @@ const ListActual = ({ data, setData }) => {
           data={data}
           setData={setData}
           toggleFavourite={toggleFavourite}
+          toggleCompleted = {toggleCompleted}
         />
       );
     }
@@ -45,6 +57,7 @@ const ListActual = ({ data, setData }) => {
           data={data}
           setData={setData}
           toggleFavourite={toggleFavourite}
+          toggleCompleted = {toggleCompleted}
         />
       );
     }

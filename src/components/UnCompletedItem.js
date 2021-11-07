@@ -14,6 +14,7 @@ const UnCompletedItem = ({
   data,
   setData,
   toggleFavourite,
+  toggleCompleted,
 }) => {
   const [isHovered, setIsHover] = useState(false);
 
@@ -27,11 +28,19 @@ const UnCompletedItem = ({
         onMouseLeave={() => {
           setIsHover(false);
         }}
+        onClick={() => {
+          toggleCompleted(id);
+        }}
       >
         {isHovered ? <FaRegCheckCircle /> : <FaRegCircle />}
       </div>
       <div className="internal-internal">{value}</div>
-      <div className="star" onClick={()=>{toggleFavourite(id)}}>
+      <div
+        className="star"
+        onClick={() => {
+          toggleFavourite(id);
+        }}
+      >
         {isFavourite ? <FaStar /> : <FaRegStar />}
       </div>
     </div>
