@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import List from './List';
+import {
+  FaPlus,
+} from 'react-icons/fa';
 const AddCompoenent = () => {
   return (
     <div className="add-comp">
-      <div className="add-comp-icon">+</div>
-      <input className="add-comp-input"></input>
+      <div className="add-comp-icon"><FaPlus /></div>
+      <input className="add-comp-input"
+      placeholder="Add a task"></input>
     </div>
   );
 };

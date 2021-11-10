@@ -2,6 +2,7 @@
   padding-top: 30px;
   padding-left: 20px;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .list-list-name {
@@ -26,6 +27,29 @@
   display: flex;
   justify-content: space-between;
   line-height: 30px;
+}
+
+.add-comp-icon
+{
+  margin-left:15px;
+  margin-top: 15px;
+  color: #a5668b;
+}
+
+.add-comp-input
+{
+  margin-left:15px;
+
+  width: 100%;
+  background-color: pink;
+  outline: none;
+  border:0px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.add-comp-input:active{
+  border:0px;
+  outline: none;
 }
 
 .list-actual {
