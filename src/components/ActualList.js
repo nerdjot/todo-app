@@ -11,7 +11,7 @@ import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
 const ListActual = ({ data, setData }) => {
-
+  var numberOfCompletedTodos = 0;
   const toggleCompleted = (pid) => {
     var newData = [...data];
     for (let i = 0; i < newData.length; i++) {
@@ -49,6 +49,7 @@ const ListActual = ({ data, setData }) => {
   });
   const CompletedList = data.map((Item) => {
     if (Item['isCompleted']) {
+      numberOfCompletedTodos++;
       return (
         <CompletedItem
           id={Item['id']}
@@ -65,12 +66,19 @@ const ListActual = ({ data, setData }) => {
   return (
     <div className="list-actual">
       {UnCompletedList}
+      
+      {(numberOfCompletedTodos!=0)?
       <details>
         <summary>
-          <div className="summary">Completed1</div>
-        </summary>
-        {CompletedList}
+          <div className="summary-completed">Completed 
+            <span className="number-completed">{numberOfCompletedTodos}</span>
+          </div>
+        </summary> 
+      {CompletedList}
       </details>
+      : < > </>}
+        
+        
     </div>
   );
 };
