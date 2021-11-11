@@ -67,7 +67,7 @@ const ListActual = ({ data, setData }) => {
       {UnCompletedList}
       <details>
         <summary>
-          <div className="summary">Completed</div>
+          <div className="summary">Completed1</div>
         </summary>
         {CompletedList}
       </details>
