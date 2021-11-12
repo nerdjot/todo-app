@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { FaPlus, FaRegCircle } from 'react-icons/fa';
 const AddCompoenent = ({ data, setData }) => {
   let x = [1, 2, 3];
-  console.log(typeof x);
   const [inputText, setInputText] = useState('');
   const [inputInfoFocus, setInputInFocus] = useState(false);
 
