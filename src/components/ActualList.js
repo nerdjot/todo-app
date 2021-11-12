@@ -36,13 +36,14 @@ const ListActual = ({ data, setData }) => {
     if (!Item['isCompleted']) {
       return (
         <UnCompletedItem
+          key={Item['id']}
           id={Item['id']}
           isFavourite={Item['isFavourite']}
           value={Item['value']}
           data={data}
           setData={setData}
           toggleFavourite={toggleFavourite}
-          toggleCompleted = {toggleCompleted}
+          toggleCompleted={toggleCompleted}
         />
       );
     }
@@ -52,13 +53,14 @@ const ListActual = ({ data, setData }) => {
       numberOfCompletedTodos++;
       return (
         <CompletedItem
+          key={Item['id']}
           id={Item['id']}
           isFavourite={Item['isFavourite']}
           value={Item['value']}
           data={data}
           setData={setData}
           toggleFavourite={toggleFavourite}
-          toggleCompleted = {toggleCompleted}
+          toggleCompleted={toggleCompleted}
         />
       );
     }
@@ -66,19 +68,20 @@ const ListActual = ({ data, setData }) => {
   return (
     <div className="list-actual">
       {UnCompletedList}
-      
-      {(numberOfCompletedTodos!=0)?
-      <details>
-        <summary>
-          <div className="summary-completed">Completed 
-            <span className="number-completed">{numberOfCompletedTodos}</span>
-          </div>
-        </summary> 
-      {CompletedList}
-      </details>
-      : < > </>}
-        
-        
+
+      {numberOfCompletedTodos != 0 ? (
+        <details>
+          <summary>
+            <div className="summary-completed">
+              Completed
+              <span className="number-completed">{numberOfCompletedTodos}</span>
+            </div>
+          </summary>
+          {CompletedList}
+        </details>
+      ) : (
+        <> </>
+      )}
     </div>
   );
 };

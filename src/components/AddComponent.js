@@ -8,10 +8,11 @@ const AddCompoenent = ({ data, setData }) => {
 
   const handleAdd = () => {
     var newTodo = {
-      id: data.length,
+      id: Math.floor(Math.random() * 10000),
       value: inputText,
       isCompleted: false,
       isFavourite: false,
+      creationDate: new Date(),
     };
     setInputText('');
     let copyData = [...data];

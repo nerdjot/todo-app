@@ -10,24 +10,28 @@ const List = () => {
       value: 'Bring eggs from Mall',
       isCompleted: false,
       isFavourite: true,
+      creationTime: new Date(2018, 11, 24, 10, 33, 30, 0)
     },
     {
       id: 1,
       value: 'Bring tomatos from Mall',
       isCompleted: false,
       isFavourite: false,
+      creationTime: new Date(2018, 12, 24, 10, 33, 30, 0)
     },
     {
       id: 2,
       value: 'Bring chicken from Mall',
       isCompleted: true,
       isFavourite: true,
+      creationTime: new Date(2018, 10, 24, 10, 33, 30, 0)
     },
     {
       id: 3,
       value: 'Bring fish from Mall',
       isCompleted: true,
       isFavourite: false,
+      creationTime: new Date(2020, 11, 24, 10, 33, 30, 0)
     },
   ]);
   return (
