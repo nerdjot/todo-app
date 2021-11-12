@@ -35,7 +35,7 @@ const List = () => {
       <div className="list-list-name">My Day</div>
       <div className="list-date">Saturday, October 23</div>
       <div className="list-view">
-        <AddComponent></AddComponent>
+        <AddComponent data={data} setData={setData}></AddComponent>
         <ActualList data={data} setData={setData} />
 
         <div className="list-empty">
