@@ -26,7 +26,6 @@
   border-bottom: 2px solid #eeeeee;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .add-comp-icon {
@@ -38,21 +37,32 @@
 .add-comp-input {
   margin-left: 15px;
   width: 100%;
-  
+
   outline: none;
   border: 0px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 }
-.add-comp-input::placeholder{
+.add-comp-input::placeholder {
   color: #a5668b;
 }
-.add-comp-input:focus::placeholder{
-  color:#6e6e6e
+.add-comp-input:focus::placeholder {
+  color: #6e6e6e;
 }
 .add-comp-input:active {
   border: 0px;
   outline: none;
+}
+
+.add-comp-btn {
+  background-color: white;
+  border: 0px;
+  height: 40px;
+  cursor: pointer;
+  color: #a5668b;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .list-actual {
