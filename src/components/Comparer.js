@@ -1,8 +1,12 @@
 export function GetComparerFunc(pstrSortBy, isDescending) {
   let lComparer;
   switch (pstrSortBy) {
+    case 'creationTime':
+      lComparer = new CreationTimeComparer();
     case 'value':
       lComparer = new ValueComparer();
+    case 'importance':
+      lComparer = new ImportanceComparer();
     default:
       lComparer = new CreationTimeComparer();
   }
@@ -31,7 +35,7 @@ class Comparer {
   };
 
   Descending = (pTodoA, pTodoB) => {
-    return -1 * Ascending(pTodoA, pTodoB);
+    return -1 * this.Ascending(pTodoA, pTodoB);
   };
 }
 
@@ -48,10 +52,6 @@ class ValueComparer extends Comparer {
     } else {
       return 0;
     }
-  };
-
-  Descending = (pTodoA, pTodoB) => {
-    return -1 * Ascending(pTodoA, pTodoB);
   };
 }
 
@@ -75,9 +75,5 @@ class ImportanceComparer extends Comparer {
     } else {
       return 0;
     }
-  };
-
-  Descending = (pTodoA, pTodoB) => {
-    return -1 * Ascending(pTodoA, pTodoB);
   };
 }
