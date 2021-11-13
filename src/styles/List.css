@@ -133,6 +133,9 @@ summary {
   color: #a5668b;
   font-size: 18px;
 }
+summary {
+  outline: none;
+}
 
 summary > * {
   margin-top: 10px;

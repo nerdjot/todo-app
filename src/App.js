@@ -13,7 +13,7 @@ export default function App() {
       value: 'Bring eggs from Mall',
       isCompleted: false,
       isFavourite: true,
-      creationTime: new Date(2018, 11, 24, 10, 33, 30, 0),
+      creationTime: new Date(2020, 11, 24, 10, 33, 30, 0),
     },
     {
       id: 1,
@@ -68,11 +68,7 @@ export default function App() {
     <div>
       <Navbar searchKeyword={searchKeyword}></Navbar>
       {/*search bar will be here*/}
-      <Body
-        filteredData={lFilteredData}
-        data={data}
-        setData={setData}
-      ></Body>
+      <Body filteredData={lFilteredData} data={data} setData={setData}></Body>
     </div>
   );
 }

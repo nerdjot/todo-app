@@ -10,7 +10,7 @@ import {
 import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
-const ListActual = ({ data, setData }) => {
+const ListActual = ({ filteredData, data, setData }) => {
   var numberOfCompletedTodos = 0;
   const toggleCompleted = (pid) => {
     var newData = [...data];
@@ -32,7 +32,7 @@ const ListActual = ({ data, setData }) => {
     setData(newData);
   };
 
-  const UnCompletedList = data.map((Item) => {
+  const UnCompletedList = filteredData.map((Item) => {
     if (!Item['isCompleted']) {
       return (
         <UnCompletedItem
@@ -48,7 +48,7 @@ const ListActual = ({ data, setData }) => {
       );
     }
   });
-  const CompletedList = data.map((Item) => {
+  const CompletedList = filteredData.map((Item) => {
     if (Item['isCompleted']) {
       numberOfCompletedTodos++;
       return (
