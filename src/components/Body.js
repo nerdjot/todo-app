@@ -4,8 +4,8 @@ import List from "./List";
 const Body = () => {
   return (
     <div className="body-div">
-      <div className="side-bar">SideBar</div>
-      <List></List>
+      <div className="side-bar">SideBar</div>{/*will tell which filter we are on */}
+      <List></List>{/*will handle render and update of lists */}
     </div>
   );
 };
