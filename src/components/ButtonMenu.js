@@ -4,7 +4,7 @@ import '../styles/Navbar.css';
 import Menu from './Menu';
 
 const ButtonMenu = () => {
-  const [shouldShowSortMenu, setShouldShowSortMenu] = useState(true);
+  const [shouldShowSortMenu, setShouldShowSortMenu] = useState(false);
 
   const ref = useRef();
 
@@ -20,21 +20,27 @@ const ButtonMenu = () => {
         setShouldShowSortMenu(false);
       }
     };
+
+    document.addEventListener('mousedown', checkIfClickedOutside);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
   }, [shouldShowSortMenu]);
 
   return (
-    <div id="btn" className="btnMenu" ref={ref}>
-      <div
-        className="sort-btn"
-        onClick={() => {
-          setShouldShowSortMenu((oldState) => !oldState);
-        }}
-        onBlur={() => {
-          setShouldShowSortMenu(false);
-        }}
-      >
-        <FaSort />
-        <div>Sort</div>
+    <div>
+      <div id="btn" className="btnMenu" ref={ref}>
+        <div
+          className="sort-btn"
+          onClick={() => {
+            setShouldShowSortMenu((oldState) => !oldState);
+          }}
+        >
+          <FaSort />
+          <div>Sort</div>
+        </div>
         {shouldShowSortMenu ? <Menu /> : <> </>}
       </div>
     </div>

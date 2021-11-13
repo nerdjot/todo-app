@@ -7,7 +7,6 @@ const Menu = () => {
   return (
     <div className="menu">
       <div className="menuTitle">Sort By</div>
-      <hr />
     </div>
   );
 };

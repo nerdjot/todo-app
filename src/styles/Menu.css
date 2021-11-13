@@ -1,7 +1,17 @@
-.menu{
-  position:fixed;
-  width:150px;
-  top:120px;
-  right:15px;
+.menu {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  background-color: white;
+  z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  right: 15px;
+}
+.menuTitle {
+  height: 32px;
+  width: 100%;
+  line-height: 32px;
+  font-size: 18px;
+  border-bottom: 2px solid #eaeaea;
+  text-align: center;
 }
