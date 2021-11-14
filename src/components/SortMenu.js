@@ -5,7 +5,7 @@ import ButtonMenu from './ButtonMenu';
 const SortMenu = () => {
   const SortMenuDetails = [
     {
-      icon: <FaCheckCircle />,
+      icon: <FaRegStar />,
       label: 'Alphabetically',
       onClick: () => {
         return true;

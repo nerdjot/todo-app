@@ -4,6 +4,7 @@ import '../styles/Navbar.css';
 import Menu from './Menu';
 
 const ButtonMenu = ({ menuDetails }) => {
+
   const [shouldShowSortMenu, setShouldShowSortMenu] = useState(true);
 
   const ref = useRef();

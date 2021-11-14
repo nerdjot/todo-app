@@ -3,7 +3,7 @@ import '../styles/List.css';
 import AddComponent from './AddComponent';
 import ActualList from './ActualList';
 import { FaSort } from 'react-icons/fa';
-import ButtonMenu from './ButtonMenu';
+import SortMenu from './SortMenu';
 
 const List = ({ filteredData, data, setData }) => {
   return (
@@ -14,7 +14,7 @@ const List = ({ filteredData, data, setData }) => {
           <div className="list-date">Saturday, October 23</div>
         </div>
         <div className="list-control">
-          <ButtonMenu />
+          <SortMenu />
         </div>
       </div>
       <div className="list-view">

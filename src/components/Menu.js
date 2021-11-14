@@ -7,14 +7,15 @@ import MenuItem from './MenuItem';
 const Menu = ({ menuDetails }) => {
   const MenuItems = menuDetails.map((menuDetail) => {
     <MenuItem
-      label={menuDetails.label}
-      onClick={menuDetails.onClick}
-      icon={menuDetail.icon}
+      label={menuDetail.label}
+      onClick={menuDetail.onClick}
+      Icon={menuDetail.icon}
     />;
   });
   return (
     <div className="menu">
       <div className="menuTitle">Sort By</div>
+      {MenuItems}
     </div>
   );
 };

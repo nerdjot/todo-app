@@ -10,6 +10,7 @@ const MenuItem = ({ label, Icon, onClick }) => {
         onClick();
       }}
     >
+      {label}
       <div className="menu-icon">{Icon}</div>
       <div className="menu-label">{label}</div>
     </div>
