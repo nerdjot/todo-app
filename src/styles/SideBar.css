@@ -1,0 +1,46 @@
+.side-bar {
+  background-color: #eeeeee;
+  width: 60px;
+  overflow-x: hidden;
+}
+
+.side-bar-item {
+  width: 200%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  display: flex;
+}
+
+@keyframes move-filter {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: -50px;
+  }
+}
+
+.filter-comp {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  display: flex;
+}
+.filter-comp:hover {
+  animation-name: move-filter;
+  animation-duration: 1s;
+}
+
+.filter-icon {
+  width: 50%;
+}
+
+.filter-name {
+  font-size: 14px;
+  line-height: 50px;
+  width: 50%;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Body.css';
 import List from './List';
+import SideBar from './SideBar';
 const Body = ({
   filteredData,
   data,
@@ -12,7 +13,7 @@ const Body = ({
 }) => {
   return (
     <div className="body-div">
-      <div className="side-bar">SideBar</div>
+      <SideBar />
       {/*will tell which filter we are on */}
       <List
         filteredData={filteredData}
