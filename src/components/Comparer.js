@@ -3,14 +3,17 @@ export function GetComparerFunc(pstrSortBy, isDescending) {
   switch (pstrSortBy) {
     case 'creation date':
       lComparer = new CreationTimeComparer();
+      break;
     case 'alphabetical order':
       lComparer = new ValueComparer();
+      break;
     case 'importance':
       lComparer = new ImportanceComparer();
+      break;
     default:
       lComparer = new CreationTimeComparer();
+      break;
   }
-
   if (isDescending) {
     return lComparer.Descending;
   } else {
@@ -45,16 +48,11 @@ class ValueComparer extends Comparer {
   }
 
   Ascending = (pTodoA, pTodoB) => {
-    console.log(pTodoA['value'].toLowerCase());
-    console.log(pTodoB['value'].toLowerCase());
     if (pTodoA['value'].toLowerCase() < pTodoB['value'].toLowerCase()) {
-      console.log(-1);
       return -1;
     } else if (pTodoA['value'].toLowerCase() > pTodoB['value'].toLowerCase()) {
-      console.log(1);
       return 1;
     } else {
-      console.log(0);
       return 0;
     }
   };
@@ -78,7 +76,7 @@ class ImportanceComparer extends Comparer {
     } else if (valA === false && valB === true) {
       return +1;
     } else {
-      return 1;
+      return 0;
     }
   };
 }

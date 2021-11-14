@@ -25,14 +25,14 @@ export default function App() {
     {
       id: 2,
       value: 'aBring chicken from Mall',
-      isCompleted: false,
+      isCompleted: true,
       isFavourite: true,
       creationTime: new Date(2018, 10, 24, 10, 33, 30, 0),
     },
     {
       id: 3,
       value: 'bBring fish from Mall',
-      isCompleted: false,
+      isCompleted: true,
       isFavourite: false,
       creationTime: new Date(2020, 11, 24, 10, 33, 30, 0),
     },
@@ -57,7 +57,6 @@ export default function App() {
     //3. sort
     let lComparerFunc = GetComparerFunc(sortBy, isDescending);
     lCopyData.sort(lComparerFunc);
-    console.log(lCopyData);
     return lCopyData;
   };
 
