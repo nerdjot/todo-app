@@ -3,14 +3,17 @@ import '../styles/Navbar.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import SearchBar from './SearchBar';
 
-const Navbar = () => {
+const Navbar = ({ searchKeyword, setSearchKeyword }) => {
   return (
     <div className="navbar">
       <div className="navbar-logo">
         <FaCheckCircle></FaCheckCircle>
       </div>
       <div className="navbar-app-name">Tasks</div>
-      <SearchBar />
+      <SearchBar
+        searchKeyword={searchKeyword}
+        setSearchKeyword={setSearchKeyword}
+      />
     </div>
   );
 };

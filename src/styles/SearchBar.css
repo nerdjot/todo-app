@@ -9,8 +9,16 @@
   line-height: 40px;
   border-radius: 3px;
 }
-.search-bar:focus {
+.search-bar-focus {
+  width: 60%;
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  color: #a5668b;
   background-color: white;
+  margin-left: 20px;
+  line-height: 40px;
+  border-radius: 3px;
 }
 .search-input:focus {
   background-color: white;
@@ -21,6 +29,7 @@
 .search-bar:hover input {
   background-color: white;
 }
+
 
 .search-input {
   background-color: #e9bed7;

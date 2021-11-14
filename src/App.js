@@ -60,15 +60,18 @@ export default function App() {
     return lCopyData;
   };
 
-  const containsSearchKeyword = () => {
-    return true;
+  const containsSearchKeyword = (todo) => {
+    return todo['value'].toLowerCase().includes(searchKeyword);
   };
 
   let lFilteredData = getFilteredData();
 
   return (
     <div>
-      <Navbar searchKeyword={searchKeyword}></Navbar>
+      <Navbar
+        searchKeyword={searchKeyword}
+        setSearchKeyword={setSearchKeyword}
+      ></Navbar>
       {/*search bar will be here*/}
       <Body
         filteredData={lFilteredData}
