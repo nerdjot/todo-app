@@ -6,11 +6,12 @@ import MenuItem from './MenuItem';
 
 const Menu = ({ menuDetails }) => {
   const MenuItems = menuDetails.map((menuDetail) => {
+    return (
     <MenuItem
-      label={menuDetail.label}
+      label={menuDetail['label']}
       onClick={menuDetail.onClick}
       Icon={menuDetail.icon}
-    />;
+    />);
   });
   return (
     <div className="menu">

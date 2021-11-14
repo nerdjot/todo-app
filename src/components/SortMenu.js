@@ -1,19 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { FaRegStar, FaRegCalendar, FaSortAlphaUp } from 'react-icons/fa';
+import {
+  FaRegStar,
+  FaRegCalendar,
+  FaSortAlphaUp,
+  FaRegCalendarPlus,
+  FaRegCalendarTimes,
+} from 'react-icons/fa';
 import ButtonMenu from './ButtonMenu';
 
 const SortMenu = () => {
   const SortMenuDetails = [
     {
-      icon: <FaRegStar />,
+      icon: <FaSortAlphaUp />,
       label: 'Alphabetically',
       onClick: () => {
         return true;
       },
     },
     {
-      icon: <FaRegCalendar />,
+      icon: <FaRegCalendarPlus />,
       label: 'Creation Date',
+      onClick: () => {
+        return true;
+      },
+    },
+    {
+      icon: <FaRegStar />,
+      label: 'Importance',
+      onClick: () => {
+        return true;
+      },
+    },
+    {
+      icon: <FaRegCalendarTimes />,
+      label: 'Due Date',
       onClick: () => {
         return true;
       },
