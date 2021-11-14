@@ -5,7 +5,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.list-details{
+.list-details {
   display: flex;
   justify-content: space-between;
 }
@@ -24,10 +24,10 @@
   padding-top: 20px;
   height: 100%;
 }
-.list-control{
+.list-control {
 }
 
-.sort-btn{
+.sort-btn {
   cursor: pointer;
   display: flex;
   margin-right: 15px;
@@ -36,8 +36,11 @@
   padding-top: 10px;
   padding-left: 10px;
 }
-.sort-btn:hover{
-  background-color:#eeeeee
+.sort-btn:hover {
+  background-color: #eeeeee;
+}
+.btn-menu-btn-label {
+  padding-right: 5px;
 }
 
 .add-comp {

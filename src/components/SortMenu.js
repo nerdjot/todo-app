@@ -5,30 +5,39 @@ import {
   FaSortAlphaUp,
   FaRegCalendarPlus,
   FaRegCalendarTimes,
+  FaArrowUp,
+  FaArrowDown,
+  FaTimes,
 } from 'react-icons/fa';
 import ButtonMenu from './ButtonMenu';
+import '../styles/SortMenu.css';
 
-const SortMenu = () => {
+const SortMenu = ({ isDescending, setIsDescending, sortBy, setSortBy }) => {
+  const [shouldShowSortMenu, setShouldShowSortMenu] = useState(false);
+
   const SortMenuDetails = [
     {
       icon: <FaSortAlphaUp />,
       label: 'Alphabetically',
       onClick: () => {
-        return true;
+        setSortBy('alphabetical order');
+        setShouldShowSortMenu(false);
       },
     },
     {
       icon: <FaRegCalendarPlus />,
       label: 'Creation Date',
       onClick: () => {
-        return true;
+        setSortBy('creation date');
+        setShouldShowSortMenu(false);
       },
     },
     {
       icon: <FaRegStar />,
       label: 'Importance',
       onClick: () => {
-        return true;
+        setSortBy('importance');
+        setShouldShowSortMenu(false);
       },
     },
     {
@@ -40,9 +49,45 @@ const SortMenu = () => {
     },
   ];
 
+  const FlipIsDescending = () => {
+    setIsDescending(!isDescending);
+  };
+
+  const GoToDefaultSorting = () => {
+    setSortBy('');
+  };
+
   return (
-    <div>
-      <ButtonMenu menuDetails={SortMenuDetails} />
+    <div className="sort-menu">
+      <ButtonMenu
+        menuDetails={SortMenuDetails}
+        shouldShowSortMenu={shouldShowSortMenu}
+        setShouldShowSortMenu={setShouldShowSortMenu}
+      />
+      {sortBy === '' ? (
+        <></>
+      ) : (
+        <div className="sorted-by-comp">
+          <div
+            className="sort-menu-btn"
+            onClick={() => {
+              FlipIsDescending();
+            }}
+          >
+            {isDescending ? <FaArrowDown /> : <FaArrowUp />}
+          </div>
+
+          <div className="sort-menu-label">{'Sorted by ' + sortBy}</div>
+          <div
+            className="sort-menu-btn"
+            onClick={() => {
+              GoToDefaultSorting();
+            }}
+          >
+            <FaTimes />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

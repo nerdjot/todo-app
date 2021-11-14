@@ -1,0 +1,27 @@
+.sort-menu {
+
+  margin-right: 20px;
+}
+
+.sort-menu div {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.sorted-by-comp {
+  margin-top:10px;
+  display: flex;
+  font-size: 13px;
+}
+.sort-menu-label {
+  width: 90%;
+  text-align: center;
+}
+.sort-menu-btn {
+  width: 19px;
+  height: 13px;
+  padding-left: 6px;
+}
+.sort-menu-btn:hover {
+  background-color: #eeeeee;
+}

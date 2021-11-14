@@ -3,9 +3,8 @@ import { FaSort } from 'react-icons/fa';
 import '../styles/Navbar.css';
 import Menu from './Menu';
 
-const ButtonMenu = ({ menuDetails }) => {
-
-  const [shouldShowSortMenu, setShouldShowSortMenu] = useState(true);
+const ButtonMenu = ({ menuDetails, shouldHideMenu,shouldShowSortMenu, setShouldShowSortMenu }) => {
+ 
 
   const ref = useRef();
 
@@ -40,7 +39,7 @@ const ButtonMenu = ({ menuDetails }) => {
           }}
         >
           <FaSort />
-          <div>Sort</div>
+          <div className="btn-menu-btn-label">Sort</div>
         </div>
         {shouldShowSortMenu ? <Menu menuDetails={menuDetails}></Menu> : <> </>}
       </div>

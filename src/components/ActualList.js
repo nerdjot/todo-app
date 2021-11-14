@@ -31,39 +31,41 @@ const ListActual = ({ filteredData, data, setData }) => {
     }
     setData(newData);
   };
-
-  const UnCompletedList = filteredData.map((Item) => {
-    if (!Item['isCompleted']) {
-      return (
-        <UnCompletedItem
-          key={Item['id']}
-          id={Item['id']}
-          isFavourite={Item['isFavourite']}
-          value={Item['value']}
-          data={data}
-          setData={setData}
-          toggleFavourite={toggleFavourite}
-          toggleCompleted={toggleCompleted}
-        />
-      );
-    }
+  let unCompletedData = filteredData.filter((Item) => {
+    return !Item['isCompleted'];
   });
-  const CompletedList = filteredData.map((Item) => {
-    if (Item['isCompleted']) {
-      numberOfCompletedTodos++;
-      return (
-        <CompletedItem
-          key={Item['id']}
-          id={Item['id']}
-          isFavourite={Item['isFavourite']}
-          value={Item['value']}
-          data={data}
-          setData={setData}
-          toggleFavourite={toggleFavourite}
-          toggleCompleted={toggleCompleted}
-        />
-      );
-    }
+  let completedData = filteredData.filter((Item) => {
+    return Item['isCompleted'];
+  });
+
+  const UnCompletedList = unCompletedData.map((Item) => {
+    return (
+      <UnCompletedItem
+        key={Item['id']}
+        id={Item['id']}
+        isFavourite={Item['isFavourite']}
+        value={Item['value']}
+        data={data}
+        setData={setData}
+        toggleFavourite={toggleFavourite}
+        toggleCompleted={toggleCompleted}
+      />
+    );
+  });
+  const CompletedList = completedData.map((Item) => {
+    numberOfCompletedTodos++;
+    return (
+      <CompletedItem
+        key={Item['id']}
+        id={Item['id']}
+        isFavourite={Item['isFavourite']}
+        value={Item['value']}
+        data={data}
+        setData={setData}
+        toggleFavourite={toggleFavourite}
+        toggleCompleted={toggleCompleted}
+      />
+    );
   });
   return (
     <div className="list-actual">

@@ -1,9 +1,9 @@
 export function GetComparerFunc(pstrSortBy, isDescending) {
   let lComparer;
   switch (pstrSortBy) {
-    case 'creationTime':
+    case 'creation date':
       lComparer = new CreationTimeComparer();
-    case 'value':
+    case 'alphabetical order':
       lComparer = new ValueComparer();
     case 'importance':
       lComparer = new ImportanceComparer();
@@ -71,9 +71,9 @@ class ImportanceComparer extends Comparer {
     if (valA === true && valB === false) {
       return -1;
     } else if (valA === false && valB === true) {
-      return 1;
+      return +1;
     } else {
-      return 0;
+      return 1;
     }
   };
 }

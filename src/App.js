@@ -42,6 +42,8 @@ export default function App() {
 
   const [sortBy, setSortBy] = useState('');
 
+  const [isDescending, setIsDescending] = useState(true);
+
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const getFilteredData = () => {
@@ -53,7 +55,7 @@ export default function App() {
     //2. search filter
     lCopyData = lCopyData.filter((todo) => containsSearchKeyword(todo));
     //3. sort
-    let lComparerFunc = GetComparerFunc(sortBy);
+    let lComparerFunc = GetComparerFunc(sortBy, isDescending);
     lCopyData.sort(lComparerFunc);
     return lCopyData;
   };
@@ -68,7 +70,15 @@ export default function App() {
     <div>
       <Navbar searchKeyword={searchKeyword}></Navbar>
       {/*search bar will be here*/}
-      <Body filteredData={lFilteredData} data={data} setData={setData}></Body>
+      <Body
+        filteredData={lFilteredData}
+        data={data}
+        setData={setData}
+        isDescending={isDescending}
+        setIsDescending={setIsDescending}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+      ></Body>
     </div>
   );
 }

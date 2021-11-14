@@ -5,7 +5,15 @@ import ActualList from './ActualList';
 import { FaSort } from 'react-icons/fa';
 import SortMenu from './SortMenu';
 
-const List = ({ filteredData, data, setData }) => {
+const List = ({
+  filteredData,
+  data,
+  setData,
+  isDescending,
+  setIsDescending,
+  sortBy,
+  setSortBy,
+}) => {
   return (
     <div className="list-div">
       <div className="list-details">
@@ -14,7 +22,12 @@ const List = ({ filteredData, data, setData }) => {
           <div className="list-date">Saturday, October 23</div>
         </div>
         <div className="list-control">
-          <SortMenu />
+          <SortMenu
+            isDescending={isDescending}
+            setIsDescending={setIsDescending}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+          />
         </div>
       </div>
       <div className="list-view">
