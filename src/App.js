@@ -40,7 +40,7 @@ export default function App() {
 
   const [filterName, setFilterName] = useState('');
 
-  const [sortBy, setSortBy] = useState('alphabetical order');
+  const [sortBy, setSortBy] = useState('');
 
   const [isDescending, setIsDescending] = useState(true);
 
