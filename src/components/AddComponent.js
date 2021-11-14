@@ -11,11 +11,12 @@ const AddCompoenent = ({ data, setData }) => {
       value: inputText,
       isCompleted: false,
       isFavourite: false,
-      creationDate: new Date(),
+      creationTime: new Date(Date.now()),
     };
     setInputText('');
     let copyData = [...data];
     copyData.push(newTodo);
+    console.log(newTodo);
     setData(copyData);
   };
   return (
