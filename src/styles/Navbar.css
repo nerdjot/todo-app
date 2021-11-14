@@ -1,13 +1,26 @@
-.navbar{
-  background-color: #A5668B;
-  height:60px;
-  top:0;
-  left:0;
-  position:absolute;
-  width:100%;
+.navbar {
+  background-color: #a5668b;
+  height: 60px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
   color: white;
-  font-weight:600;
-  font-size:20px;
-  line-height:70px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 70px;
   align: center;
+  display: flex;
+}
+
+.navbar-logo {
+  width: 44px;
+  font-size: 24px;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.navbar-app-name {
+  padding-left: 2px;
+  line-height: 60px;
 }

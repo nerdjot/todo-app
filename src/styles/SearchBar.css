@@ -1,0 +1,45 @@
+.search-bar {
+  width: 60%;
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  color: #a5668b;
+  background-color: #e9bed7;
+  margin-left: 20px;
+  line-height: 40px;
+  border-radius: 3px;
+}
+.search-bar:focus {
+  background-color: white;
+}
+.search-input:focus {
+  background-color: white;
+}
+.search-bar:hover {
+  background-color: white;
+}
+.search-bar:hover input {
+  background-color: white;
+}
+
+.search-input {
+  background-color: #e9bed7;
+  outline: none;
+  border: 0px;
+  font-size: 16px;
+  width: 90%;
+}
+
+.search-icon {
+  width: 30px;
+  font-size: 16px;
+  padding-top: 3px;
+  padding-left: 10px;
+}
+
+.search-cncl-btn {
+  width: 30px;
+  font-size: 16px;
+  padding-top: 3px;
+  padding-left: 10px;
+}
