@@ -45,11 +45,16 @@ class ValueComparer extends Comparer {
   }
 
   Ascending = (pTodoA, pTodoB) => {
+    console.log(pTodoA['value'].toLowerCase());
+    console.log(pTodoB['value'].toLowerCase());
     if (pTodoA['value'].toLowerCase() < pTodoB['value'].toLowerCase()) {
+      console.log(-1);
       return -1;
     } else if (pTodoA['value'].toLowerCase() > pTodoB['value'].toLowerCase()) {
+      console.log(1);
       return 1;
     } else {
+      console.log(0);
       return 0;
     }
   };

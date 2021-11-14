@@ -10,29 +10,29 @@ export default function App() {
   const [data, setData] = useState([
     {
       id: 0,
-      value: 'Bring eggs from Mall',
+      value: 'dBring eggs from Mall',
       isCompleted: false,
       isFavourite: true,
-      creationTime: new Date(2020, 11, 24, 10, 33, 30, 0),
+      creationTime: new Date(2021, 11, 24, 10, 33, 30, 0),
     },
     {
       id: 1,
-      value: 'Bring tomatos from Mall',
+      value: 'cBring tomatos from Mall',
       isCompleted: false,
       isFavourite: false,
       creationTime: new Date(2018, 12, 24, 10, 33, 30, 0),
     },
     {
       id: 2,
-      value: 'Bring chicken from Mall',
-      isCompleted: true,
+      value: 'aBring chicken from Mall',
+      isCompleted: false,
       isFavourite: true,
       creationTime: new Date(2018, 10, 24, 10, 33, 30, 0),
     },
     {
       id: 3,
-      value: 'Bring fish from Mall',
-      isCompleted: true,
+      value: 'bBring fish from Mall',
+      isCompleted: false,
       isFavourite: false,
       creationTime: new Date(2020, 11, 24, 10, 33, 30, 0),
     },
@@ -40,7 +40,7 @@ export default function App() {
 
   const [filterName, setFilterName] = useState('');
 
-  const [sortBy, setSortBy] = useState('');
+  const [sortBy, setSortBy] = useState('alphabetical order');
 
   const [isDescending, setIsDescending] = useState(true);
 
@@ -57,6 +57,7 @@ export default function App() {
     //3. sort
     let lComparerFunc = GetComparerFunc(sortBy, isDescending);
     lCopyData.sort(lComparerFunc);
+    console.log(lCopyData);
     return lCopyData;
   };
 
