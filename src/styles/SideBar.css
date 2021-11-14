@@ -19,6 +19,8 @@
   }
   to {
     margin-left: -50px;
+    background-color: #e9bed7;
+    color:black;
   }
 }
 
@@ -29,10 +31,12 @@
   line-height: 50px;
   text-align: center;
   display: flex;
+  color: #6e6e6e
 }
 .filter-comp:hover {
   animation-name: move-filter;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .filter-icon {
@@ -40,7 +44,7 @@
 }
 
 .filter-name {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 50px;
   width: 50%;
 }
