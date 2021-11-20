@@ -19,7 +19,6 @@
       margin-left: 0;
     }
     to {
-      margin-left: -54px;
       background-color: white;
     }
   }
@@ -58,7 +57,7 @@
   }
 
   .filter-name {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 50px;
     width: 50%;
   }
