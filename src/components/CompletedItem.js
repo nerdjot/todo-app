@@ -25,6 +25,7 @@ const CompletedItem = ({
   const ref = useRef();
   const ContextMenuDetails = [
     {
+      id: 1,
       icon: <FaCheckCircle />,
       label: 'Mark as Uncompleted',
       onClick: () => {
@@ -33,6 +34,7 @@ const CompletedItem = ({
       },
     },
     {
+      id: 2,
       icon: isFavourite ? <FaRegStar /> : <FaStar />,
       label: isFavourite ? 'Remove importance' : 'Mark as Important',
       onClick: () => {
@@ -41,6 +43,7 @@ const CompletedItem = ({
       },
     },
     {
+      id: 3,
       icon: <FaRegTrashAlt style={{ color: 'red' }} />,
       label: 'Delete task',
       onClick: () => {

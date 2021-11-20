@@ -17,7 +17,6 @@ const AddCompoenent = ({ data, setData, filterName }) => {
     setInputText('');
     let copyData = [...data];
     copyData.push(newTodo);
-    console.log(newTodo);
     setData(copyData);
   };
   return (

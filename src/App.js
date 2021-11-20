@@ -52,7 +52,6 @@ export default function App() {
     let lCopyData = [];
     //1. filter view
     let lFilter = GetFilter(filterName);
-    console.log(filterName);
     lCopyData = data.filter((todo) => lFilter(todo));
     //2. search filter
     lCopyData = lCopyData.filter((todo) => containsSearchKeyword(todo));

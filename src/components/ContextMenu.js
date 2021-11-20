@@ -8,6 +8,7 @@ const ContextMenu = ({ menuDetails, style }) => {
   const MenuItems = menuDetails.map((menuDetail) => {
     return (
       <MenuItem
+        key={menuDetail['id']}
         label={menuDetail['label']}
         onClick={menuDetail.onClick}
         Icon={menuDetail.icon}
