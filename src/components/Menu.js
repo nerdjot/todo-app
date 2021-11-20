@@ -4,7 +4,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import '../styles/Menu.css';
 import MenuItem from './MenuItem';
 
-const Menu = ({ menuDetails }) => {
+const Menu = ({ menuDetails, style }) => {
   const MenuItems = menuDetails.map((menuDetail) => {
     return (
       <MenuItem
@@ -15,7 +15,7 @@ const Menu = ({ menuDetails }) => {
     );
   });
   return (
-    <div className="menu">
+    <div className="menu" style={style}>
       <div className="menuTitle">Sort By</div>
       {MenuItems}
     </div>

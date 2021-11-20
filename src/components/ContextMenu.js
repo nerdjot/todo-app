@@ -3,11 +3,11 @@ import { FaSort } from 'react-icons/fa';
 import '../styles/Navbar.css';
 import Menu from './Menu';
 
-const ButtonMenu = ({
+const ContextMenu = ({
   menuDetails,
   shouldHideMenu,
-  shouldShowSortMenu,
-  setShouldShowSortMenu,
+  shouldShowContextMenu,
+  setShouldShowContextMenu,
 }) => {
   const ref = useRef();
 
@@ -16,38 +16,47 @@ const ButtonMenu = ({
       // If the menu is open and the clicked target is not within the menu,
       // then close the menu
       if (
-        shouldShowSortMenu &&
+        shouldShowContextMenu &&
         ref.current &&
         !ref.current.contains(e.target)
       ) {
-        setShouldShowSortMenu(false);
+        setShouldShowContextMenu(false);
       }
+    };
+    const preventDefaultContextMenu = (e) => {
+      e.preventDefault();
     };
 
     document.addEventListener('mousedown', checkIfClickedOutside);
+    document.addEventListener('contextmenu', preventDefaultContextMenu);
 
     return () => {
       // Cleanup the event listener
       document.removeEventListener('mousedown', checkIfClickedOutside);
+      document.removeEventListener('contextmenu', preventDefaultContextMenu);
     };
-  }, [shouldShowSortMenu]);
+  }, [shouldShowContextMenu]);
 
   return (
     <div>
       <div id="btn" className="btnMenu" ref={ref}>
         <div
           className="sort-btn"
-          onClick={() => {
-            setShouldShowSortMenu((oldState) => !oldState);
+          onContextMenu={() => {
+            setShouldShowContextMenu((oldState) => !oldState);
           }}
         >
           <FaSort />
-          <div className="btn-menu-btn-label">Sort</div>
+          <div className="btn-menu-btn-label">Context Menu</div>
         </div>
-        {shouldShowSortMenu ? <Menu menuDetails={menuDetails}></Menu> : <> </>}
+        {shouldShowContextMenu ? (
+          <Menu menuDetails={menuDetails}></Menu>
+        ) : (
+          <> </>
+        )}
       </div>
     </div>
   );
 };
 
-export default ButtonMenu;
+export default ContextMenu;

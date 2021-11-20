@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   FaCheckCircle,
   FaRegCheckCircle,
@@ -6,6 +6,8 @@ import {
   FaStar,
   FaRegStar,
 } from 'react-icons/fa';
+import ContextMenu from './ContextMenu';
+import Menu from './Menu';
 
 const UnCompletedItem = ({
   id,
@@ -17,9 +19,79 @@ const UnCompletedItem = ({
   toggleCompleted,
 }) => {
   const [isHovered, setIsHover] = useState(false);
+  const [mousePos, setMousePos] = useState(['0px', '0px']);
+  const [shouldShowContextMenu, setShouldShowContextMenu] = useState(false);
+  const ref = useRef();
+  const SortMenuDetails = [
+    {
+      icon: <FaRegCircle />,
+      label: 'Alphabetically',
+      onClick: () => {
+        setSortBy('alphabetical order');
+        setShouldShowSortMenu(false);
+      },
+    },
+    {
+      icon: <FaRegCircle />,
+      label: 'Creation Date',
+      onClick: () => {
+        setSortBy('creation date');
+        setShouldShowSortMenu(false);
+      },
+    },
+    {
+      icon: <FaRegCircle />,
+      label: 'Importance',
+      onClick: () => {
+        setSortBy('importance');
+        setShouldShowSortMenu(false);
+      },
+    },
+    {
+      icon: <FaRegCircle />,
+      label: 'Due Date',
+      onClick: () => {
+        return true;
+      },
+    },
+  ];
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      setMousePos([e.clientX + 'px', e.clientY + 'px']);
+      if (
+        shouldShowContextMenu &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        setShouldShowContextMenu(false);
+      }
+    };
+    const preventDefaultContextMenu = (e) => {
+      setMousePos([e.clientX + 'px', e.clientY + 'px']);
+      e.preventDefault();
+    };
+
+    document.addEventListener('mousedown', checkIfClickedOutside);
+    document.addEventListener('contextmenu', preventDefaultContextMenu);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+      document.removeEventListener('contextmenu', preventDefaultContextMenu);
+    };
+  }, [shouldShowContextMenu]);
 
   return (
-    <div className="un-completed-item">
+    <div
+      className="un-completed-item"
+      onContextMenu={() => {
+        setShouldShowContextMenu((oldState) => !oldState);
+      }}
+      ref={ref}
+    >
       <div
         className="check-icons"
         onMouseEnter={() => {
@@ -43,6 +115,18 @@ const UnCompletedItem = ({
       >
         {isFavourite ? <FaStar /> : <FaRegStar />}
       </div>
+      {shouldShowContextMenu ? (
+        <Menu
+          menuDetails={SortMenuDetails}
+          style={{
+            left: mousePos[0],
+            top: mousePos[1],
+            position: 'fixed',
+          }}
+        ></Menu>
+      ) : (
+        <> </>
+      )}
     </div>
   );
 };
