@@ -12,6 +12,7 @@ const Body = ({
   setSortBy,
   filterName,
   setFilterName,
+  searchKeyword,
 }) => {
   return (
     <div className="body-div">
@@ -26,6 +27,7 @@ const Body = ({
         sortBy={sortBy}
         setSortBy={setSortBy}
         filterName={filterName}
+        searchKeyword={searchKeyword}
       ></List>
       {/*will handle render and update of lists */}
     </div>

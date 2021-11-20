@@ -38,7 +38,7 @@ export default function App() {
     },
   ]);
 
-  const [filterName, setFilterName] = useState('Tasks');
+  const [filterName, setFilterName] = useState('My day');
 
   const [sortBy, setSortBy] = useState('');
 
@@ -84,6 +84,7 @@ export default function App() {
         setSortBy={setSortBy}
         filterName={filterName}
         setFilterName={setFilterName}
+        searchKeyword={searchKeyword}
       ></Body>
     </div>
   );

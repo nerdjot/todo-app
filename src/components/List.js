@@ -14,6 +14,7 @@ const List = ({
   sortBy,
   setSortBy,
   filterName,
+  searchKeyword,
 }) => {
   const getTodaysDateString = () => {
     let lDateObj = new Date();
@@ -67,7 +68,12 @@ const List = ({
         </div>
       </div>
       <div className="list-view">
-        <AddComponent data={data} setData={setData}></AddComponent>
+        {searchKeyword === '' ? (
+          <AddComponent data={data} setData={setData}></AddComponent>
+        ) : (
+          <></>
+        )}
+
         <ActualList filteredData={filteredData} data={data} setData={setData} />
 
         <div className="list-empty">

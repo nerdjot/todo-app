@@ -38,7 +38,7 @@ const SideBar = ({ setFilterName }) => {
     // },
   ];
 
-  const [activeFilterId, setActiveFilterId] = useState(3);
+  const [activeFilterId, setActiveFilterId] = useState(0);
 
   const FiltersRends = Filters.map((Filter) => {
     return (
