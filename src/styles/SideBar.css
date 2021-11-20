@@ -1,63 +1,92 @@
-.side-bar {
-  background-color: #eeeeee;
-  width: 65px;
-  overflow-x: hidden;
-}
-
-.side-bar-item {
-  width: 200%;
-  height: 50px;
-  font-size: 24px;
-  line-height: 50px;
-  text-align: center;
-  display: flex;
-}
-
-@keyframes move-filter {
-  from {
-    margin-left: 0;
+@media only screen and (min-width: 600px) {
+  .side-bar {
+    background-color: #eeeeee;
+    width: 65px;
+    overflow-x: hidden;
   }
-  to {
-    margin-left: -54px;
-    background-color: white;
+
+  .side-bar-item {
+    width: 200%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    display: flex;
+  }
+
+  @keyframes move-filter {
+    from {
+      margin-left: 0;
+    }
+    to {
+      margin-left: -54px;
+      background-color: white;
+    }
+  }
+
+  .filter-comp {
+    width: 200%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    display: flex;
+    color: #6e6e6e;
+  }
+
+  .filter-comp:hover {
+    animation-name: move-filter;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .filter-comp-activate {
+    width: 200%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    display: flex;
+    color: #a5668b;
+  }
+  .filter-comp-activate:hover {
+    animation-name: move-filter;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .filter-icon {
+    width: 50%;
+  }
+
+  .filter-name {
+    font-size: 11px;
+    line-height: 50px;
+    width: 50%;
   }
 }
 
-.filter-comp {
-  width: 200%;
-  height: 50px;
-  font-size: 24px;
-  line-height: 50px;
-  text-align: center;
-  display: flex;
-  color: #6e6e6e;
-}
-
-.filter-comp:hover {
-  animation-name: move-filter;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.filter-comp-activate {
-  width: 200%;
-  height: 50px;
-  font-size: 24px;
-  line-height: 50px;
-  text-align: center;
-  display: flex;
-  color: #a5668b;
-}
-.filter-comp-activate:hover {
-  animation-name: move-filter;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.filter-icon {
-  width: 50%;
-}
-
-.filter-name {
-  font-size: 11px;
-  line-height: 50px;
-  width: 50%;
+@media only screen and (max-width: 600px) {
+  .side-bar {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: visible;
+    background-color: #eeeeee;
+  }
+  .filter-comp {
+    width: 200%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    color: #6e6e6e;
+  }
+  .filter-comp-activate {
+    width: 200%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    color: #a5668b;
+  }
 }

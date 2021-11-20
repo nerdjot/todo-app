@@ -142,3 +142,24 @@ summary > div {
   height: 40px;
   border-bottom: 2px solid #eaeaea;
 }
+
+@media only screen and (max-width: 600px) {
+  .list-div {
+    max-height: calc(100vh - 150px);
+    overflow-y: hidden;
+  }
+  .list-details {
+    width: 90%;
+  }
+  .list-empty {
+    width: 90%;
+  }
+  .un-completed-item {
+    width: 90%;
+  }
+  .list-actual {
+    width: 100%;
+    max-height: calc(100vh - 280px);
+    overflow-y: scroll;
+  }
+}

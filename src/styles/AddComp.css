@@ -46,3 +46,12 @@
   display: flex;
   width: 100%;
 }
+@media only screen and (max-width: 600px) {
+  .add-comp {
+    width: 90%;
+    height: 50px;
+    border-bottom: 2px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+  }
+}
