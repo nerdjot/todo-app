@@ -20,7 +20,7 @@
     display: flex;
     justify-content: start;
     flex-direction: column-reverse;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 120px);
     overflow-y: hidden;
     overflow-x: hidden;
   }

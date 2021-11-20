@@ -72,6 +72,8 @@
     overflow-x: visible;
     background-color: #eeeeee;
     overflow-y: hidden;
+    position: fixed;
+    bottom: 0;
   }
   .filter-comp {
     width: 200%;

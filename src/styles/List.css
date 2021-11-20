@@ -147,6 +147,7 @@ summary > div {
   .list-div {
     max-height: calc(100vh - 150px);
     overflow-y: hidden;
+    padding-top: 30px;
   }
   .list-details {
     width: 90%;
@@ -161,5 +162,6 @@ summary > div {
     width: 100%;
     max-height: calc(100vh - 280px);
     overflow-y: scroll;
+    
   }
 }
