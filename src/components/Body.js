@@ -10,10 +10,11 @@ const Body = ({
   setIsDescending,
   sortBy,
   setSortBy,
+  setFilterName,
 }) => {
   return (
     <div className="body-div">
-      <SideBar />
+      <SideBar setFilterName={setFilterName} />
       {/*will tell which filter we are on */}
       <List
         filteredData={filteredData}

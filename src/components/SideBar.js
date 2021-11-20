@@ -1,25 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/SideBar.css';
-import { FaSun, FaCalendarAlt, FaStar } from 'react-icons/fa';
+import {
+  FaSun,
+  FaCalendarAlt,
+  FaStar,
+  FaCheckCircle,
+  FaHome,
+} from 'react-icons/fa';
 import FilterComp from './FilterComp.js';
 
-const SideBar = () => {
+const SideBar = ({ setFilterName }) => {
   const Filters = [
     {
       id: 0,
       name: 'My day',
       icon: FaSun,
     },
-    {
-      id: 1,
-      name: 'Planned',
-      icon: FaCalendarAlt,
-    },
+    // {
+    //   id: 1,
+    //   name: 'Planned',
+    //   icon: FaCalendarAlt,
+    // },
     {
       id: 2,
       name: 'Important',
       icon: FaStar,
     },
+    {
+      id: 3,
+      name: 'Tasks',
+      icon: FaHome,
+    },
+    // {
+    //   id: 4,
+    //   name: 'Completed',
+    //   icon: FaCheckCircle,
+    // },
   ];
 
   const FiltersRends = Filters.map((Filter) => {
@@ -28,6 +44,9 @@ const SideBar = () => {
         key={Filter['id']}
         name={Filter['name']}
         Icon={Filter['icon']}
+        onClick={() => {
+          setFilterName(Filter['name']);
+        }}
       />
     );
   });

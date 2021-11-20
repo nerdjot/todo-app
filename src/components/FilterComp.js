@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../styles/SideBar.css';
 import { FaSun } from 'react-icons/fa';
 
-const FilterComp = ({ Icon, name }) => {
+const FilterComp = ({ Icon, name, onClick }) => {
   return (
-    <div className="filter-comp">
+    <div className="filter-comp" onClick={onClick}>
       <div className="filter-icon">
         <Icon />
       </div>

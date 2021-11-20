@@ -38,7 +38,7 @@ export default function App() {
     },
   ]);
 
-  const [filterName, setFilterName] = useState('');
+  const [filterName, setFilterName] = useState('Tasks');
 
   const [sortBy, setSortBy] = useState('');
 
@@ -51,6 +51,7 @@ export default function App() {
     let lCopyData = [];
     //1. filter view
     let lFilter = GetFilter(filterName);
+    console.log(filterName);
     lCopyData = data.filter((todo) => lFilter(todo));
     //2. search filter
     lCopyData = lCopyData.filter((todo) => containsSearchKeyword(todo));
@@ -81,6 +82,7 @@ export default function App() {
         setIsDescending={setIsDescending}
         sortBy={sortBy}
         setSortBy={setSortBy}
+        setFilterName={setFilterName}
       ></Body>
     </div>
   );
