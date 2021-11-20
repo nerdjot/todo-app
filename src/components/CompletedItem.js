@@ -17,6 +17,7 @@ const CompletedItem = ({
   setData,
   toggleFavourite,
   toggleCompleted,
+  deleteTask,
 }) => {
   const [isHovered, setIsHover] = useState(false);
   const [mousePos, setMousePos] = useState(['0px', '0px']);
@@ -43,6 +44,7 @@ const CompletedItem = ({
       icon: <FaRegTrashAlt style={{ color: 'red' }} />,
       label: 'Delete task',
       onClick: () => {
+        deleteTask(id);
         setShouldShowContextMenu(false);
       },
     },

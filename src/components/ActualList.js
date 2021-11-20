@@ -12,6 +12,18 @@ import CompletedItem from './CompletedItem';
 
 const ListActual = ({ filteredData, data, setData }) => {
   var numberOfCompletedTodos = 0;
+
+  const deleteTask = (pid) => {
+    var newData = [...data];
+    for (let i = 0; i < newData.length; i++) {
+      if (newData[i]['id'] === pid) {
+        newData.splice(i, 1);
+        break;
+      }
+    }
+    setData(newData);
+  };
+
   const toggleCompleted = (pid) => {
     var newData = [...data];
     for (let i = 0; i < newData.length; i++) {
@@ -49,6 +61,7 @@ const ListActual = ({ filteredData, data, setData }) => {
         setData={setData}
         toggleFavourite={toggleFavourite}
         toggleCompleted={toggleCompleted}
+        deleteTask={deleteTask}
       />
     );
   });
@@ -64,6 +77,7 @@ const ListActual = ({ filteredData, data, setData }) => {
         setData={setData}
         toggleFavourite={toggleFavourite}
         toggleCompleted={toggleCompleted}
+        deleteTask={deleteTask}
       />
     );
   });
