@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaPlus, FaRegCircle } from 'react-icons/fa';
 import '../styles/AddComp.css';
-const AddCompoenent = ({ data, setData }) => {
+const AddCompoenent = ({ data, setData, filterName }) => {
   let x = [1, 2, 3];
   const [inputText, setInputText] = useState('');
   const [inputInfoFocus, setInputInFocus] = useState(false);
@@ -11,7 +11,7 @@ const AddCompoenent = ({ data, setData }) => {
       id: Math.floor(Math.random() * 10000),
       value: inputText,
       isCompleted: false,
-      isFavourite: false,
+      isFavourite: filterName === 'Important' ? true : false,
       creationTime: new Date(Date.now()),
     };
     setInputText('');

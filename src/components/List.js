@@ -69,7 +69,11 @@ const List = ({
       </div>
       <div className="list-view">
         {searchKeyword === '' ? (
-          <AddComponent data={data} setData={setData}></AddComponent>
+          <AddComponent
+            data={data}
+            setData={setData}
+            filterName={filterName}
+          ></AddComponent>
         ) : (
           <></>
         )}
