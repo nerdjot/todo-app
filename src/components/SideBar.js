@@ -38,15 +38,20 @@ const SideBar = ({ setFilterName }) => {
     // },
   ];
 
+  const [activeFilterId, setActiveFilterId] = useState(3);
+
   const FiltersRends = Filters.map((Filter) => {
     return (
       <FilterComp
         key={Filter['id']}
+        id={Filter['id']}
         name={Filter['name']}
         Icon={Filter['icon']}
         onClick={() => {
           setFilterName(Filter['name']);
         }}
+        activeFilterId={activeFilterId}
+        setActiveFilterId={setActiveFilterId}
       />
     );
   });

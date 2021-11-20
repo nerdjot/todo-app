@@ -10,6 +10,7 @@ const Body = ({
   setIsDescending,
   sortBy,
   setSortBy,
+  filterName,
   setFilterName,
 }) => {
   return (
@@ -24,6 +25,7 @@ const Body = ({
         setIsDescending={setIsDescending}
         sortBy={sortBy}
         setSortBy={setSortBy}
+        filterName={filterName}
       ></List>
       {/*will handle render and update of lists */}
     </div>

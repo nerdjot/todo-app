@@ -20,7 +20,6 @@
   to {
     margin-left: -54px;
     background-color: white;
-    color: black;
   }
 }
 
@@ -33,12 +32,26 @@
   display: flex;
   color: #6e6e6e;
 }
+
 .filter-comp:hover {
   animation-name: move-filter;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
+.filter-comp-activate {
+  width: 200%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  display: flex;
+  color: #a5668b;
+}
+.filter-comp-activate:hover {
+  animation-name: move-filter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
 .filter-icon {
   width: 50%;
 }

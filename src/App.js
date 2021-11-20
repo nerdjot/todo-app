@@ -82,6 +82,7 @@ export default function App() {
         setIsDescending={setIsDescending}
         sortBy={sortBy}
         setSortBy={setSortBy}
+        filterName={filterName}
         setFilterName={setFilterName}
       ></Body>
     </div>
