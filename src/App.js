@@ -10,7 +10,8 @@ export default function App() {
   const [data, setData] = useState([
     {
       id: 0,
-      value: 'dBring eggs from Mall',
+      value:
+        'The property was originally a nonstandard and unprefixed Microsoft extension called word-wrap, and was implemented by most browsers with the same name. It has since been renamed to overflow-wrap, with word-wrap being an alias.',
       isCompleted: false,
       isFavourite: true,
       creationTime: new Date(2020, 11, 24, 10, 33, 30, 0),
