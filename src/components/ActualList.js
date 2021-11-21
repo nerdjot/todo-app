@@ -11,6 +11,19 @@ import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
 const ListActual = ({ filteredData, data, setData }) => {
+  const [innerHeight, setInnerHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('resize', handleResize);
+    };
+  });
+
   var numberOfCompletedTodos = 0;
 
   const deleteTask = (pid) => {
@@ -81,8 +94,12 @@ const ListActual = ({ filteredData, data, setData }) => {
       />
     );
   });
+  console.log(innerHeight);
   return (
-    <div className="list-actual">
+    <div
+      className="list-actual"
+      style={{ maxHeight: 'calc( ' + innerHeight + 'px - 300px)' }}
+    >
       {UnCompletedList}
 
       {numberOfCompletedTodos != 0 ? (

@@ -22,7 +22,6 @@
 
 .list-view {
   padding-top: 20px;
-  height: 100%;
 }
 .list-control {
 }
@@ -161,7 +160,10 @@ summary > div {
   }
   .list-actual {
     width: 100%;
-    max-height: calc(100vh - 300px);
+    background-color: pink;
     overflow-y: scroll;
+  }
+  .list-view {
+    padding-top: 0px;
   }
 }

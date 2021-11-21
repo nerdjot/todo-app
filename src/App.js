@@ -68,7 +68,7 @@ export default function App() {
   let lFilteredData = getFilteredData();
 
   return (
-    <div>
+    <div className="app">
       <Navbar
         searchKeyword={searchKeyword}
         setSearchKeyword={setSearchKeyword}
