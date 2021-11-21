@@ -151,6 +151,7 @@ summary > div {
   }
   .list-details {
     width: 90%;
+    height: 70px;
   }
   .list-empty {
     width: 90%;
@@ -160,8 +161,7 @@ summary > div {
   }
   .list-actual {
     width: 100%;
-    max-height: calc(100vh - 280px);
+    max-height: calc(100vh - 300px);
     overflow-y: scroll;
-    
   }
 }

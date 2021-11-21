@@ -78,6 +78,7 @@ const SortMenu = ({ isDescending, setIsDescending, sortBy, setSortBy }) => {
           </div>
 
           <div className="sort-menu-label">{'Sorted by ' + sortBy}</div>
+          <div className="sort-menu-label-mobile">{sortBy}</div>
           <div
             className="sort-menu-btn"
             onClick={() => {

@@ -1,5 +1,4 @@
 .sort-menu {
-
   margin-right: 20px;
 }
 
@@ -9,7 +8,7 @@
 }
 
 .sorted-by-comp {
-  margin-top:10px;
+  margin-top: 10px;
   display: flex;
   font-size: 13px;
 }
@@ -24,4 +23,19 @@
 }
 .sort-menu-btn:hover {
   background-color: #eeeeee;
+}
+
+@media only screen and (min-width: 600px) {
+  .sort-menu-label-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sort-menu-label {
+    display: none;
+  }
+  .sort-menu {
+    margin-right: 0px;
+  }
 }
