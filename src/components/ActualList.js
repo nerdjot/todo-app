@@ -94,7 +94,6 @@ const ListActual = ({ filteredData, data, setData }) => {
       />
     );
   });
-  console.log(innerHeight);
   return (
     <div
       className="list-actual"
