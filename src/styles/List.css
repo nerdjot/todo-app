@@ -160,7 +160,6 @@ summary > div {
   }
   .list-actual {
     width: 100%;
-    background-color: pink;
     overflow-y: scroll;
   }
   .list-view {

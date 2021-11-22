@@ -11,7 +11,7 @@ import UnCompletedItem from './UnCompletedItem';
 import CompletedItem from './CompletedItem';
 
 const ListActual = ({ filteredData, data, setData }) => {
-  const [innerHeight, setInnerHeight] = useState(0);
+  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const handleResize = () => {
