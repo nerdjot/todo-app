@@ -26,7 +26,7 @@ const CompletedItem = ({
   const ContextMenuDetails = [
     {
       id: 1,
-      icon: <FaCheckCircle />,
+      icon: <FaRegCircle />,
       label: 'Mark as Uncompleted',
       onClick: () => {
         toggleCompleted(id);
